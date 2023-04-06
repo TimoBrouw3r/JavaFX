@@ -112,4 +112,8 @@ public final class State {
     public Team getTeam(){
         return userTeam; 
     }
+
+    public void setUserTeam(Team team){
+        this.userTeam = team;
+    }
 } 

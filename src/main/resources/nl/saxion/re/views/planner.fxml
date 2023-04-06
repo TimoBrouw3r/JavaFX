@@ -12,6 +12,7 @@
 	xmlns:fx="http://javafx.com/fxml/1"
 	fx:controller="nl.saxion.re.views.PlannerController"
 >
+    <NavBar />
 
 	<Region HBox.hgrow="ALWAYS" />
 
