@@ -21,7 +21,7 @@
 	<TextField id="username" fx:id="username" maxWidth="100.0" />
 	<Label styleClass="input-label"> wachtwoord: </Label>
 	<TextField id="password" fx:id="password" maxWidth="100.0" />
-	<Button fx:id="loginAction" onAction="#login">
+	<Button fx:id="loginAction" onAction="#login" defaultButton="true">
 		log-in
 	</Button>
 	<Text fx:id="statusMessage" />

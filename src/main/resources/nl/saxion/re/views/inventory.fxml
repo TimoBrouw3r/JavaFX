@@ -28,7 +28,7 @@
 					/>
 
 					<Region HBox.hgrow="ALWAYS" />
-					<Button text="Assign Task" onAction="#buyMaterials" />
+					<Button text="Order Materials" onAction="#buyMaterials" />
 				</HBox>
 
 				<HBox

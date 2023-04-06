@@ -34,7 +34,7 @@
 
 				</HBox>
 
-				<VBox fx:id="taskMaterialDetails" id="taskMaterialDetails" prefHeight="600">
+				<VBox fx:id="materials" id="taskMaterialDetails" prefHeight="600">
 
 
 				</VBox>
@@ -57,12 +57,7 @@
 
 		</HBox>
 
-		<VBox spacing="25" alignment="CENTER">
-			<UpcomingTask />
-			<UpcomingTask />
-			<UpcomingTask />
-			<UpcomingTask />
-
+		<VBox spacing="25" alignment="CENTER" fx:id="upList">
 		</VBox>
 
 	</VBox>
