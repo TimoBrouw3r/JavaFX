@@ -10,6 +10,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import nl.saxion.re.App;
 import nl.saxion.re.types.State;
 import nl.saxion.re.types.UserTypes;
 
@@ -73,7 +74,7 @@ public class LoginController {
 		int width = 1920;
 		int height = 1080;
 
-		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Main.fxml"));
+		FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(State.getInstance().getUserType().getFile()));
 		Scene scene;
 		try {
 			scene = new Scene(fxmlLoader.load(), width, height);
@@ -81,7 +82,7 @@ public class LoginController {
 			e.printStackTrace();
 			return;
 		}
-		scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
+		scene.getStylesheets().add(Objects.requireNonNull(App.class.getResource("style.css")).toExternalForm());
 
 		stage.setScene(scene);
 		stage.show(); 

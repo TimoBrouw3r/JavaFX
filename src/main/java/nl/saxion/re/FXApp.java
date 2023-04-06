@@ -19,7 +19,7 @@ public class FXApp extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         State.initialise();
-        scene = new Scene(loadFXML("views/team"), 1920, 1080);
+        scene = new Scene(loadFXML("views/login"), 1920, 1080);
         scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
         stage.setScene(scene);
         stage.setMaximized(true);
