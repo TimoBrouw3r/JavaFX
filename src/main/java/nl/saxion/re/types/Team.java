@@ -10,6 +10,8 @@ public class Team {
 
 	private String name;
     private ArrayList<Task> tasks = new ArrayList<Task>();
+    private ArrayList<String> names = new ArrayList<String>();
+    private String password;
 
     public boolean isFreeOnDate(LocalDate date) {
         for (Task task : tasks) {
@@ -41,6 +43,10 @@ public class Team {
         tasks.remove(task);
     }
 
+    public String getPassword(){
+        return password;
+    }
+
     public ArrayList<Task> getTasksInFuture() {
         ArrayList<Task> tasksInFuture = new ArrayList<Task>();
         for (Task task : tasks) {
@@ -51,8 +57,9 @@ public class Team {
         return tasksInFuture;
     }
 
-    public Team(String name) {
+    public Team(String name, String password) {
         this.name = name;
+        this.password = password;
     }
 
     public String getName() {
@@ -68,5 +75,12 @@ public class Team {
         return null;
     }
     
+    public void addNameToTeam(String name) {
+    	names.add(name);
+    }
+
+    public boolean nameInTeam(String name) {
+    	return names.contains(name);
+    }
 
 }

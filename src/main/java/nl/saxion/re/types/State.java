@@ -16,34 +16,36 @@ public final class State {
 	private UserTypes userType;
 	private ArrayList<Task> tasks = new ArrayList<>();
 	private ArrayList<Quotation> quotations = new ArrayList<>();
-    private ArrayList<Team> teams = new ArrayList<>();
-    private Team userTeam = null; 
+	private ArrayList<Team> teams = new ArrayList<>();
+	private Team userTeam = null;
 
 	public static void initialise() {
-        // add some test teams
-		Team team1 = new Team("Team 1");
-        Team team2 = new Team("Team 2");
-        Team team3 = new Team("Team 3");
-        Team team4 = new Team("Team 4");
+		// add some test teams
+		Team team1 = new Team("Team 1", "passw03");
+		Team team2 = new Team("Team 2", "passw04");
+		Team team3 = new Team("Team 3", "passw05");
+		Team team4 = new Team("Team 4", "passw06");
 		// add some test tasks at random dates
+        
+        team1.addNameToTeam("monteur1");
+        team2.addNameToTeam("monteur2");
 
-        instance.teams.add(team1);
-        instance.teams.add(team2);
-        instance.teams.add(team3);
-        instance.teams.add(team4);
+		instance.teams.add(team1);
+		instance.teams.add(team2);
+		instance.teams.add(team3);
+		instance.teams.add(team4);
 
-        instance.userTeam = team1;
-
+		instance.userTeam = team1;
 
 		Task teamTask = new Task(LocalDate.now(), "Test Name", "Test Lane 42");
-	    teamTask.setTeam(team1);
+		teamTask.setTeam(team1);
 
-        Task teamTask2 = new Task(LocalDate.now().plusDays(1), "Test Name sdafhksdf", "Test Lane 42");
-        teamTask2.setTeam(team1);
+		Task teamTask2 = new Task(LocalDate.now().plusDays(1), "Test Name sdafhksdf", "Test Lane 42");
+		teamTask2.setTeam(team1);
 
 		instance.tasks.add(teamTask);
 		instance.tasks.add(teamTask2);
-        instance.tasks.add(new Task(LocalDate.now(), "Test Name 1", "Test Lane 42"));
+		instance.tasks.add(new Task(LocalDate.now(), "Test Name 1", "Test Lane 42"));
 		instance.tasks.add(new Task(LocalDate.now(), "Test Name 2", "Test Lane 42"));
 		instance.tasks.add(new Task(LocalDate.now(), "Test Name 3", "Test Lane 42"));
 		instance.tasks.add(new Task(LocalDate.now().plusDays(5), "Test Name 4", "Test Lane 42"));
@@ -87,15 +89,16 @@ public final class State {
 		}
 		return tasksOnDate;
 	}
-    public ArrayList<Team> getTeamsOnDate(LocalDate date) {
-        ArrayList<Team> teamsOnDate = new ArrayList<>();
-        for (Team team : teams) {
-            if (team.isFreeOnDate(date)) {
-                teamsOnDate.add(team);
-            }
-        }
-        return teamsOnDate;
-    }
+
+	public ArrayList<Team> getTeamsOnDate(LocalDate date) {
+		ArrayList<Team> teamsOnDate = new ArrayList<>();
+		for (Team team : teams) {
+			if (team.isFreeOnDate(date)) {
+				teamsOnDate.add(team);
+			}
+		}
+		return teamsOnDate;
+	}
 
 	public ArrayList<Quotation> getQuotations() {
 		return quotations;
@@ -108,13 +111,60 @@ public final class State {
 	public void addQuotation(Quotation quotation) {
 		quotations.add(quotation);
 	}
-    
-    public Team getTeam(){
-        return userTeam; 
-    }
 
-    public void setUserTeam(Team team){
-        this.userTeam = team;
-    }
-} 
+	public Team getTeam() {
+		return userTeam;
+	}
 
+	public void setUserTeam(Team team) {
+		this.userTeam = team;
+	}
+
+	public boolean checkLogin(String username, String password) {
+		// check if username in teams
+
+		for (Team team : teams) {
+			if (team.nameInTeam(username) && team.getPassword().equals(password)) {
+				setUserTeam(team);
+				setUserType(UserTypes.INSTALLER);
+				setUsername(username);
+				return true;
+			}
+		}
+
+		switch (username) {
+			case "advisor":
+
+				if (password.equals("advisor")) {
+					State.getInstance().setUsername("Advisor");
+					State.getInstance().setUserType(UserTypes.ADVISOR);
+					return true;
+				} else {
+					return false;
+				}
+
+			case "planner":
+
+				if (password.equals("planner")) {
+					State.getInstance().setUsername("Planner");
+					State.getInstance().setUserType(UserTypes.PLANNER);
+					return true;
+				} else {
+					return false;
+				}
+
+			case "inventory":
+
+				if (password.equals("inventory")) {
+					State.getInstance().setUsername("Inventory");
+					State.getInstance().setUserType(UserTypes.INVENTORY);
+					return true;
+				} else {
+					return false;
+				}
+
+			default: return false;
+		}
+
+	}
+}

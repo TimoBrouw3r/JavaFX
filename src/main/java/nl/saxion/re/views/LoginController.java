@@ -25,45 +25,19 @@ public class LoginController {
 	@FXML
 	Text statusMessage;
 
-	public void login() {
+public void login() {
 		System.out.println("Logging in....");
 		System.out.println(username.getText());
 		System.out.println(password.getText());
 
-        boolean validPass = checkPassword(password.getText(), username.getText());
-
-        if(!validPass){
+        boolean loginCorrect = State.getInstance().checkLogin(username.getText().toLowerCase(), password.getText());
+	
+        if (loginCorrect) {
+            ok();
+        } else {
             err();
-            return;
         }
-
-		switch (username.getText().toLowerCase()) {
-			case "advisor":
-				State.getInstance().setUsername("Advisor");
-				State.getInstance().setUserType(UserTypes.ADVISOR);
-				ok();
-				break;
-			case "planner":
-				State.getInstance().setUsername("Planner");
-				State.getInstance().setUserType(UserTypes.PLANNER);
-				ok();
-				break;
-			case "installer":
-				State.getInstance().setUsername("Installer");
-				State.getInstance().setUserType(UserTypes.INSTALLER);
-				ok();
-				break;
-			case "inventory":
-				State.getInstance().setUsername("Inventory");
-				State.getInstance().setUserType(UserTypes.INVENTORY);
-				ok();
-				break;
-			default:
-				err();
-				break;
-		}
-
-	}
+    }
 
 	private void ok() {
 		statusMessage.setText("Logged in!");
