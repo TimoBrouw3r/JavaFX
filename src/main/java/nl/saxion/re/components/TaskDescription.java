@@ -32,7 +32,7 @@ public class TaskDescription extends HBox {
     private Task task; 
     boolean selected = false;
     
-    public TaskDescription(Task task) {
+    public TaskDescription(Task task, boolean selected) {
         this.task = task;
         taskDescriptions.add(this);
     
@@ -54,7 +54,8 @@ public class TaskDescription extends HBox {
 
         name.setText(task.getClientName());
         address.setText(task.getClientAddress());
-        teamAssigned.setSelected(task.getTeam() != null);
+        // teamAssigned.setSelected(task.getTeam() != null);
+        teamAssigned.setSelected(selected);
 
     }
 

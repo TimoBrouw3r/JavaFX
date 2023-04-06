@@ -3,10 +3,14 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<fx:root xmlns:fx="http://javafx.com/fxml/1" type="HBox"> 
+<fx:root xmlns:fx="http://javafx.com/fxml/1" type="HBox"  spacing="50"> 
 
-    <Label fx:id="username" />
+
+    <Region HBox.hgrow="ALWAYS" prefWidth="1000"/>
+    <Label fx:id="username"  />
     <Button fx:id="logout" text="Logout"  onAction="#logout" />
+
+    <Region  prefWidth="20"/>
     
 </fx:root>
 

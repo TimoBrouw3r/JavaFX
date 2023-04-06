@@ -36,7 +36,7 @@ public final class State {
 
 
 		Task teamTask = new Task(LocalDate.now(), "Test Name", "Test Lane 42");
-	    //	teamTask.setTeam(team1);
+	    teamTask.setTeam(team1);
 
         Task teamTask2 = new Task(LocalDate.now().plusDays(1), "Test Name sdafhksdf", "Test Lane 42");
         teamTask2.setTeam(team1);
@@ -117,3 +117,4 @@ public final class State {
         this.userTeam = team;
     }
 } 
+

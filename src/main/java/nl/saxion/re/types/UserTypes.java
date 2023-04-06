@@ -3,7 +3,7 @@ package nl.saxion.re.types;
 public enum UserTypes{
     ADVISOR("views/advisor.fxml"),
     PLANNER("views/planner.fxml"),
-    INSTALLER("views/installer.fxml"),
+    INSTALLER("views/team.fxml"),
     INVENTORY("views/inventory.fxml"); 
 
     private String file; 

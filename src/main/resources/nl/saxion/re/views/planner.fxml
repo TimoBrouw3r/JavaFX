@@ -5,91 +5,93 @@
 <?import javafx.scene.text.*?>
 <?import nl.saxion.re.components.*?>
 
-<HBox
+<VBox
 	alignment="CENTER"
 	spacing="10"
 	xmlns="http://javafx.com/javafx/8.0.40"
 	xmlns:fx="http://javafx.com/fxml/1"
 	fx:controller="nl.saxion.re.views.PlannerController"
 >
-    <NavBar />
 
-	<Region HBox.hgrow="ALWAYS" />
+	<NavBar />
+	<HBox>
 
-	<VBox>
+		<Region HBox.hgrow="ALWAYS" />
 
-		<Region VBox.vgrow="ALWAYS" />
-		<GridPane
-			prefWidth="1535"
-			prefHeight="864"
-			id="mainblock"
-			alignment="CENTER"
-		>
-			<HBox
-				id="headerpane"
-				GridPane.columnIndex="0"
-				GridPane.rowIndex="0"
-				GridPane.columnSpan="2"
-				GridPane.hgrow="ALWAYS"
-				prefHeight="135"
-				styleClass="align-left"
-			>
-				<Text> Select a Date: </Text>
-				<Region prefWidth="64" />
-				<DatePicker
-					id="datePicker"
-					fx:id="datePicker"
-					onAction="#onDateChanged"
-				/>
+		<VBox>
 
-				<Region HBox.hgrow="ALWAYS" />
-				<Button text="Assign Task" onAction="#onAssignTask" />
-			</HBox>
-
-			<HBox
-				GridPane.columnIndex="0"
-				GridPane.rowIndex="1"
-				GridPane.vgrow="ALWAYS"
+			<Region VBox.vgrow="ALWAYS" />
+			<GridPane
+				prefWidth="1535"
+				prefHeight="864"
+				id="mainblock"
 				alignment="CENTER"
-				prefWidth="767"
 			>
+				<HBox
+					id="headerpane"
+					GridPane.columnIndex="0"
+					GridPane.rowIndex="0"
+					GridPane.columnSpan="2"
+					GridPane.hgrow="ALWAYS"
+					prefHeight="135"
+					styleClass="align-left"
+				>
+					<Text> Select a Date: </Text>
+					<Region prefWidth="64" />
+					<DatePicker
+						id="datePicker"
+						fx:id="datePicker"
+						onAction="#onDateChanged"
+					/>
 
-				<VBox
-					id="tasks"
-					fx:id="tasks"
-					spacing="10"
+					<Region HBox.hgrow="ALWAYS" />
+					<Button text="Assign Task" onAction="#onAssignTask" />
+				</HBox>
+
+				<HBox
+					GridPane.columnIndex="0"
+					GridPane.rowIndex="1"
+					GridPane.vgrow="ALWAYS"
+					alignment="CENTER"
+					prefWidth="767"
 				>
 
-				</VBox>
+					<VBox
+						id="tasks"
+						fx:id="tasks"
+						spacing="10"
+					>
 
-			</HBox>
+					</VBox>
+
+				</HBox>
 
 
-			<HBox
-				id="rightpane"
-				GridPane.columnIndex="1"
-				GridPane.rowIndex="1"
-				GridPane.vgrow="ALWAYS"
-				alignment="CENTER"
-				prefWidth="767"
-			>
-
-				<VBox
-                    spacing="10"
-                    id="teams"
-                    fx:id="teams"
+				<HBox
+					id="rightpane"
+					GridPane.columnIndex="1"
+					GridPane.rowIndex="1"
+					GridPane.vgrow="ALWAYS"
+					alignment="CENTER"
+					prefWidth="767"
 				>
 
-
-				</VBox>
-			</HBox>
-
-		</GridPane>
-		<Region VBox.vgrow="ALWAYS" />
-
-	</VBox>
-
-	<Region HBox.hgrow="ALWAYS" />
+					<VBox
+						spacing="10"
+						id="teams"
+						fx:id="teams"
+					>
 
 
-</HBox>
+					</VBox>
+				</HBox>
+
+			</GridPane>
+			<Region VBox.vgrow="ALWAYS" />
+
+		</VBox>
+
+		<Region HBox.hgrow="ALWAYS" />
+
+	</HBox>
+</VBox>

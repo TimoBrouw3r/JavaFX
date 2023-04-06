@@ -93,7 +93,7 @@ public class PlannerController {
 
 
         for(Task t : tasks) {
-            TaskDescription td = new TaskDescription(t);
+            TaskDescription td = new TaskDescription(t, t.getTeam() != null);
             this.tasks.getChildren().add(td);
             taskDescriptions.add(td);
 
