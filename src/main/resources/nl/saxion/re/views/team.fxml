@@ -4,65 +4,67 @@
 <?import javafx.scene.text.*?>
 <?import nl.saxion.re.components.*?>
 
-<VBox
+<HBox
 	alignment="CENTER"
 	styleClass="team-description"
 	xmlns="http://javafx.com/javafx/8"
 	xmlns:fx="http://javafx.com/fxml/1"
 	fx:controller="nl.saxion.re.views.TeamController">
 
-	<NavBar />
-	<HBox alignment="CENTER"> 
 
-		<VBox
-			alignment="CENTER"
+	<VBox
+		alignment="CENTER"
+	>
+		<Label fx:id="taskgreet" VBox.vgrow="ALWAYS" prefHeight="150"
+		/>
+
+		<Pane prefHeight="810" prefWidth="930" HBox.hgrow="ALWAYS"
+			styleClass="taskDetails"
 		>
-			<Label fx:id="taskgreet" VBox.vgrow="ALWAYS" prefHeight="150"
-			/>
+			<VBox>
+				<HBox prefWidth="930" alignment="CENTER" prefHeight="100">
+					<Label fx:id="clientName" HBox.hgrow="ALWAYS" prefWidth="465" />
+					<Label fx:id="clientAddress" HBox.hgrow="ALWAYS" prefWidth="465" />
+				</HBox>
 
-			<Pane prefHeight="810" prefWidth="930" 
-				styleClass="taskDetails"
-			>
-				<VBox>
-					<HBox prefWidth="930" alignment="CENTER" prefHeight="100">
-						<Label fx:id="clientName" HBox.hgrow="ALWAYS" prefWidth="465" />
-						<Label fx:id="clientAddress" HBox.hgrow="ALWAYS" prefWidth="465" />
-					</HBox>
-
-					<HBox prefWidth="930" alignment="CENTER" prefHeight="100">
-						<Label HBox.hgrow="ALWAYS" prefWidth="465"> Materiaal Nodig: </Label>
-						<Label HBox.hgrow="ALWAYS" prefWidth="465"> Aantal: </Label>
+				<HBox prefWidth="930" alignment="CENTER" prefHeight="100">
+					<Label HBox.hgrow="ALWAYS" prefWidth="465"> Needed Material: </Label>
+					<Label HBox.hgrow="ALWAYS" prefWidth="465"> Amount: </Label>
 
 
-					</HBox>
+				</HBox>
 
-					<VBox fx:id="materials" id="taskMaterialDetails" prefHeight="600">
+				<VBox fx:id="taskMaterialDetails" id="taskMaterialDetails" prefHeight="600">
 
-
-					</VBox>
 
 				</VBox>
 
-			</Pane>
-
-
-		</VBox>
-
-		<VBox id="upcomingTasks" prefWidth="680">
-
-			<Region prefHeight="100" />
-			<HBox alignment="CENTER">
-
-				<Label prefWidth="680" minWidth="680">
-					Aankomende Taken:
-				</Label>
-
-			</HBox>
-
-			<VBox fx:id="upList" spacing="25" alignment="CENTER">
 			</VBox>
 
+		</Pane>
+
+
+	</VBox>
+
+	<VBox id="upcomingTasks" prefWidth="680">
+
+		<Region prefHeight="100" />
+		<HBox alignment="CENTER">
+
+			<Label prefWidth="680" minWidth="680">
+				Upcoming Tasks
+			</Label>
+
+		</HBox>
+
+		<VBox spacing="25" alignment="CENTER">
+			<UpcomingTask />
+			<UpcomingTask />
+			<UpcomingTask />
+			<UpcomingTask />
+
 		</VBox>
 
-	</HBox>
-</VBox>
+	</VBox>
+
+</HBox>

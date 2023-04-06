@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import nl.saxion.re.components.*?>
+
+<VBox spacing="10.0" xmlns="http://javafx.com/javafx/8.0.40"
+	xmlns:fx="http://javafx.com/fxml/1" fx:controller="nl.saxion.re.views.InventoryController">
+	<NavBar />
+
+	<HBox alignment="CENTER">
+		<VBox >
+
+
+
+				<HBox
+					id="headerpane"
+					prefHeight="135"
+					styleClass="align-left"
+				>
+					<Text> Selecteer een datum: </Text>
+					<Region prefWidth="64" />
+					<DatePicker
+						id="datePicker"
+						fx:id="datePicker"
+						onAction="#onDateChanged"
+					/>
+
+					<Region HBox.hgrow="ALWAYS" />
+					<Button text="Assign Task" onAction="#buyMaterials" />
+				</HBox>
+
+				<HBox
+					alignment="CENTER"
+					prefWidth="767"
+				>
+
+					<VBox
+						id="tasks"
+						fx:id="tasks"
+						spacing="10"
+					>
+
+					</VBox>
+
+				</HBox>
+
+
+
+		</VBox>
+	</HBox>
+</VBox>
