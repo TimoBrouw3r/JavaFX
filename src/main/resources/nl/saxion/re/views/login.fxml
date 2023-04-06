@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+
+
+<VBox
+	alignment="CENTER"
+	spacing="20.0"
+	xmlns="http://javafx.com/javafx/8.0.171"
+	xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="nl.saxion.re.views.LoginController"
+>
+	<HBox>
+		<Region HBox.hgrow="ALWAYS" />
+		<Label styleClass="input-label" HBox.hgrow="ALWAYS"> Username: </Label>
+		<Region HBox.hgrow="ALWAYS" />
+	</HBox>
+	<TextField id="username" fx:id="username" maxWidth="100.0" />
+	<Label styleClass="input-label"> Password: </Label>
+	<TextField id="password" fx:id="password" maxWidth="100.0" />
+	<Button fx:id="loginAction" onAction="#login">
+		log-in
+	</Button>
+	<Text fx:id="statusMessage" />
+
+</VBox>  

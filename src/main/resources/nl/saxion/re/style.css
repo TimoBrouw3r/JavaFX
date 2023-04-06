@@ -1,0 +1,137 @@
+.button{
+  -fx-padding: 2em;
+    -fx-background: none;
+    -fx-outline: none;
+    -fx-background-color: #444444;
+    -fx-text-fill: #ffffff;
+}
+
+
+
+.root{
+    -fx-font-size: 200%; 
+}
+
+.text-field{
+    -fx-min-width: 400px;
+    -fx-text-fill: #000000;
+}
+
+.input-label{
+    -fx-text-alignment: left;
+    -fx-alignment: center-left;
+    -fx-pref-width: 400px;
+}
+
+#mainblock{
+    -fx-background-color: #D9D9D9;
+    -fx-padding: 2em;
+}
+
+#rightpane{
+    /* left black solid border */
+    -fx-border-color: #000000;
+    -fx-border-width: 0 0 0 1px;
+    -fx-border-style: solid;
+}
+
+#headerpane{
+ /* bottom border */
+    
+    -fx-border-color: #000000;
+    -fx-border-width: 0 0 1px 0;
+    -fx-border-style: solid;
+}
+
+.gridpane{
+    -fx-padding: 0em;
+}
+
+.align-left{
+    -fx-alignment: center-left;
+    -fx-text-alignment: left;
+}
+
+.team-description{
+    -fx-background-color: #ffffff;
+    -fx-pref-height: 75px; 
+    -fx-pref-width: 578px;
+    -fx-alignment: center;
+}
+
+.task-description{
+    -fx-background-color: #ffffff;
+    -fx-pref-height: 75px; 
+    -fx-pref-width: 578px;
+    -fx-alignment: center;
+}
+
+.task-description > VBox > HBox{
+    -fx-min-width: 578px;
+    -fx-padding: 20px 0 0 0 ;
+}
+
+.task-description .label{
+    -fx-alignment: center;
+}
+
+
+#tasks, #teams{
+    -fx-padding: 10px;
+}
+
+.check-box > .box{
+    /* set width and height to 50px*/
+    -fx-padding: 15px;
+    -fx-background: none; 
+    -fx-background-color: #cccccc;
+    -fx-border: none; 
+}
+.check-box > .box > .mark{
+    /*set mark size to 200*/
+    -fx-padding: 7px;
+}
+
+.check-box:selected > .box{
+    -fx-background-color: #0000ff;
+}
+
+.check-box:selected > .box > .mark{
+    -fx-background-color: #ffffff;
+}
+
+.check-box:disabled {
+    -fx-opacity: 1.0; 
+}
+
+.selected > .task-description{
+    -fx-background-color: #b7b7b7 !important;
+}
+
+.taskDetails{
+    -fx-background-color: #D9D9D9;
+}
+
+.taskDetails > VBox > HBox > .label {
+    -fx-alignment: center;
+    -fx-text-alignment: center;
+    -fx-font-size: 25px;
+}
+
+#taskMaterialDetails{
+    -fx-background-color: #888888;
+}
+
+#upcomingTasks > HBox > .label{
+    -fx-alignment: center;
+    -fx-text-alignment: center;
+    -fx-font-size: 25px;
+    -fx-underlined: true;
+}
+    
+#upcomingTasks {
+    -fx-border-style: solid;
+    -fx-border-color: #000000;
+    -fx-border-width: 0 0 0 1px;
+    -fx-border-insets: 50px;
+}

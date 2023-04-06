@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<fx:root type="HBox" xmlns:fx="http://javafx.com/fxml" alignment="CENTER" styleClass="team-description">
+    <children>
+        <VBox alignment="CENTER" spacing="10.0">
+                <Label fx:id="teamName" text="Team Name" />
+        </VBox>
+    </children>
+</fx:root> 

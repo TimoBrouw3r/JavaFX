@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import nl.saxion.re.components.*?>
+
+<HBox
+	alignment="CENTER"
+	spacing="10"
+	xmlns="http://javafx.com/javafx/8.0.40"
+	xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="nl.saxion.re.views.PlannerController"
+>
+
+	<Region HBox.hgrow="ALWAYS" />
+
+	<VBox>
+
+		<Region VBox.vgrow="ALWAYS" />
+		<GridPane
+			prefWidth="1535"
+			prefHeight="864"
+			id="mainblock"
+			alignment="CENTER"
+		>
+			<HBox
+				id="headerpane"
+				GridPane.columnIndex="0"
+				GridPane.rowIndex="0"
+				GridPane.columnSpan="2"
+				GridPane.hgrow="ALWAYS"
+				prefHeight="135"
+				styleClass="align-left"
+			>
+				<Text> Select a Date: </Text>
+				<Region prefWidth="64" />
+				<DatePicker
+					id="datePicker"
+					fx:id="datePicker"
+					onAction="#onDateChanged"
+				/>
+
+				<Region HBox.hgrow="ALWAYS" />
+				<Button text="Assign Task" onAction="#onAssignTask" />
+			</HBox>
+
+			<HBox
+				GridPane.columnIndex="0"
+				GridPane.rowIndex="1"
+				GridPane.vgrow="ALWAYS"
+				alignment="CENTER"
+				prefWidth="767"
+			>
+
+				<VBox
+					id="tasks"
+					fx:id="tasks"
+					spacing="10"
+				>
+
+				</VBox>
+
+			</HBox>
+
+
+			<HBox
+				id="rightpane"
+				GridPane.columnIndex="1"
+				GridPane.rowIndex="1"
+				GridPane.vgrow="ALWAYS"
+				alignment="CENTER"
+				prefWidth="767"
+			>
+
+				<VBox
+                    spacing="10"
+                    id="teams"
+                    fx:id="teams"
+				>
+
+
+				</VBox>
+			</HBox>
+
+		</GridPane>
+		<Region VBox.vgrow="ALWAYS" />
+
+	</VBox>
+
+	<Region HBox.hgrow="ALWAYS" />
+
+
+</HBox>
