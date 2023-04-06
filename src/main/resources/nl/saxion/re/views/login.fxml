@@ -15,11 +15,11 @@
 >
 	<HBox>
 		<Region HBox.hgrow="ALWAYS" />
-		<Label styleClass="input-label" HBox.hgrow="ALWAYS"> Username: </Label>
+		<Label styleClass="input-label" HBox.hgrow="ALWAYS"> gebruikersnaam: </Label>
 		<Region HBox.hgrow="ALWAYS" />
 	</HBox>
 	<TextField id="username" fx:id="username" maxWidth="100.0" />
-	<Label styleClass="input-label"> Password: </Label>
+	<Label styleClass="input-label"> wachtwoord: </Label>
 	<TextField id="password" fx:id="password" maxWidth="100.0" />
 	<Button fx:id="loginAction" onAction="#login">
 		log-in

@@ -30,8 +30,8 @@
 					</HBox>
 
 					<HBox prefWidth="930" alignment="CENTER" prefHeight="100">
-						<Label HBox.hgrow="ALWAYS" prefWidth="465"> Needed Material: </Label>
-						<Label HBox.hgrow="ALWAYS" prefWidth="465"> Amount: </Label>
+						<Label HBox.hgrow="ALWAYS" prefWidth="465"> Materiaal Nodig: </Label>
+						<Label HBox.hgrow="ALWAYS" prefWidth="465"> Aantal: </Label>
 
 
 					</HBox>
@@ -54,7 +54,7 @@
 			<HBox alignment="CENTER">
 
 				<Label prefWidth="680" minWidth="680">
-					Upcoming Tasks
+					Aankomende Taken:
 				</Label>
 
 			</HBox>

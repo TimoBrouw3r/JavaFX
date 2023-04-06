@@ -36,7 +36,7 @@
 					prefHeight="135"
 					styleClass="align-left"
 				>
-					<Text> Select a Date: </Text>
+					<Text> Selecteer een datum: </Text>
 					<Region prefWidth="64" />
 					<DatePicker
 						id="datePicker"

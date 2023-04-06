@@ -86,7 +86,7 @@ public class PlannerController {
 
 
         if(tasks.size() == 0) {
-            Label noTasks = new Label("No tasks on this day");
+            Label noTasks = new Label("Geen taken gevonden voor deze datum");
             this.tasks.getChildren().add(noTasks);
             return;
         }
@@ -100,7 +100,7 @@ public class PlannerController {
         }
 
         if(teams.size() == 0) {
-            Label noTeams = new Label("No teams available on this day");
+            Label noTeams = new Label("Geen teams gevonden voor deze datum");
             this.teams.getChildren().add(noTeams);
             return;
         }

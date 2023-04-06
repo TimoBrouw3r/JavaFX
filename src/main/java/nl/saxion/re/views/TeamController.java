@@ -42,11 +42,11 @@ public class TeamController {
         mainTask = State.getInstance().getTeam().getTaskOnDay(LocalDate.now());
 
 
-        taskgreet.setText("Hello, " + State.getInstance().getUsername() + "! \nThis is your task for today: \n");
+        taskgreet.setText("Hallo, " + State.getInstance().getUsername() + "! \n Vandaag ga je naar:");
 
        
         if(mainTask == null){
-            clientName.setText("No task today");
+            clientName.setText("Geen opdracht vandaag"); 
             return;
         } 
         
@@ -115,7 +115,7 @@ public class TeamController {
             meterBox.setSpacing(50);
             meterBox.setStyle("-fx-background-color: #bbbbbb;");
 
-            Label meter = new Label("Meter change needed");
+            Label meter = new Label("Meterkast aanpassen nodig");
 
             meter.setPrefWidth(700);
             meter.setAlignment(Pos.CENTER);
