@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import nl.saxion.re.components.*?>
+
+<VBox
+	xmlns="http://javafx.com/javafx/8"
+	xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="nl.saxion.re.views.AllQuotationsController"
+	spacing="50"
+>
+	<HBox>
+		<Button text="Terug" onAction="#handleBack" />
+		<Region HBox.hgrow="ALWAYS" />
+		<NavBar />
+	</HBox>
+
+    <HBox 
+        alignment="CENTER"
+        HBox.hgrow="ALWAYS"
+        >
+		<VBox
+			spacing="20"
+			alignment="CENTER"
+			styleClass="quotationView"
+			maxWidth="1200"
+			prefWidth="1200"
+		>
+
+			<Label text="Alle offertes" />
+			<HBox alignment="CENTER">
+				<VBox fx:id="quotations" spacing="10">
+				</VBox>
+            </HBox>
+
+            <Button text="Maak Opdracht" onAction="#newTask" />
+		</VBox>
+	</HBox>
+</VBox>

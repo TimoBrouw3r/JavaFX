@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<fx:root type="HBox" xmlns:fx="http://javafx.com/fxml/1">
+	<Pane fx:id="quotationDescriptionPane" styleClass="task-description">
+		<VBox alignment="CENTER">
+			<HBox spacing="100" alignment="CENTER">
+				<Label fx:id="name"></Label>
+                <Label fx:id="address"> </Label>
+			</HBox>
+		</VBox>
+	</Pane>
+
+</fx:root> 

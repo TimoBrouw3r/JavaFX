@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox 
+    xmlns:fx="http://javafx.com/fxml/1"
+    xmlns="http://javafx.com/javafx/8"
+    fx:controller="nl.saxion.re.views.AdvisorController"
+    alignment="CENTER"
+    spacing="25">
+    
+
+    <Label fx:id="greet" />
+
+    <HBox 
+        alignment="CENTER"
+        >
+        
+    <Button 
+        text="Nieuwe offerte"
+        onAction="#newQuotation"
+        />
+
+    <Button 
+        text="Toon offertes"
+        onAction="#showQuotations"
+        />
+
+    </HBox>
+
+</VBox>

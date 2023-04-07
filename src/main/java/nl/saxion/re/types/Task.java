@@ -32,6 +32,16 @@ public class Task {
         
     }
 
+
+    public Task(Quotation quotation) {
+        this.date = quotation.getDate();
+        this.clientName = quotation.getClientName();
+        this.clientAddress = quotation.getClientAddress();
+        this.amountOfSolarPanels = quotation.getAmountOfSolarPanels();
+        this.meterChangeNeeded = quotation.isMeterChangeNeeded();
+        this.transformerType = quotation.getTransformerType();
+    }
+
     public LocalDate getDate() {
         return date;
     }
