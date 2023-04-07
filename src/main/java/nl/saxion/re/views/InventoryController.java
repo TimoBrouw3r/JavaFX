@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import javafx.fxml.FXML;
 import javafx.scene.control.DatePicker;
 import javafx.scene.layout.VBox;
+import nl.saxion.re.components.QuotationDescription;
 import nl.saxion.re.components.TaskDescription;
 import nl.saxion.re.types.State;
 import nl.saxion.re.types.Task;
@@ -22,7 +23,7 @@ public class InventoryController {
 
 
  ArrayList<Task> taskList;
- ArrayList<TaskDescription> taskDescriptionList = new ArrayList<TaskDescription>();
+ ArrayList<TaskDescription> taskDescriptionList = new ArrayList<>();
 	
  @FXML
  void onDateChanged(){

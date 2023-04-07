@@ -3,11 +3,11 @@ package nl.saxion.re.views;
 import java.util.ArrayList;
 
 import javafx.fxml.FXML;
-
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import nl.saxion.re.components.PlannerTeamDescription;
+import nl.saxion.re.components.QuotationDescription;
 import nl.saxion.re.components.TaskDescription;
 import nl.saxion.re.types.State;
 import nl.saxion.re.types.Task;
@@ -27,7 +27,7 @@ public class PlannerController {
     @FXML
     VBox teams;
 
-    private ArrayList<TaskDescription> taskDescriptions = new ArrayList<TaskDescription>();
+    private ArrayList<TaskDescription> taskDescriptions = new ArrayList<>();
     private ArrayList<PlannerTeamDescription> teamDescriptions = new ArrayList<PlannerTeamDescription>();
 
     public void initialize() {

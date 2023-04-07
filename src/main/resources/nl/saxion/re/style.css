@@ -141,3 +141,15 @@
     -fx-background-color: #d9d9d9;
     -fx-padding: 10px;
 }
+
+.newQuotationPane{
+    -fx-background-color: #d9d9d9;
+    -fx-padding: 10px;
+    -fx-preferred-width: 1536px;
+    -fx-preferred-height: 864px;
+    -fx-min-width: 1536px;
+    -fx-min-height: 864px;
+    -fx-max-width: 1536px;
+    -fx-max-height: 864px;
+
+}
