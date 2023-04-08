@@ -19,7 +19,8 @@ public class Quotation {
             LocalDate date, 
             String customer_name, 
             String customer_address,
-			boolean meterChangeNeeded
+			boolean meterChangeNeeded,
+            TransformerType transformerType
         ) {
 		
         this.amountOfSolarPanels = amountOfSolarPanels;
@@ -27,6 +28,7 @@ public class Quotation {
 		this.clientName = customer_name;
 		this.clientAddress = customer_address;
 		this.meterChangeNeeded = meterChangeNeeded;
+        this.transformerType = transformerType;
 	}
 
 

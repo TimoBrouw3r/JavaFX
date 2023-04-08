@@ -53,41 +53,6 @@ public final class State {
 		instance.tasks.add(new Task(LocalDate.now().minusDays(3), "Test Name 6", "Test Lane 42"));
 		instance.tasks.add(new Task(LocalDate.now().minusDays(4), "Test Name 7", "Test Lane 42"));
 		instance.tasks.add(new Task(LocalDate.now().plusWeeks(2), "Test Name 8", "Test Lane 42"));
-
-
-        // generate some test quotations
-        Quotation quotation = new Quotation(
-                2,
-                LocalDate.now(),
-                "Test Name",
-                "Test Lane 42",
-                false
-                );
-
-        Quotation quotation2 = new Quotation(
-                3,
-                LocalDate.now().plusDays(1),
-                "Test Name sdafhksdf",
-                "Test Lane 42",
-                false
-                );
-
-        Quotation quotation3 = new Quotation(
-                4,
-                LocalDate.now().plusDays(2),
-                "Test Name 3",
-                "Test Lane 42",
-                false
-                );
-
-
-        instance.quotations.add(quotation);
-        instance.quotations.add(quotation2);
-        instance.quotations.add(quotation3);
-
-
-
-
 	}
 
 	public static State getInstance() {

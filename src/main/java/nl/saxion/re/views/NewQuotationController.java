@@ -199,8 +199,14 @@ public class NewQuotationController {
                     int amtSolarPanelsInt = Integer.parseInt(amtSolarPanelsInput.getText());
                     int efficiencyLossInt = Integer.parseInt(efficiencyLossInput.getText());
 
-                    if (amtSolarPanelsInt < 0 || efficiencyLossInt < 0) {
-                        errorLabel.setText("zonnepanelen of energieverlies kan niet negatief zijn");
+
+                    if (amtSolarPanelsInt <= 0 ) {
+                        errorLabel.setText("aantal zonnepanelen moet groter zijn dan 0");
+                        return;
+                    }
+
+                    if(efficiencyLossInt < 0){
+                        errorLabel.setText("energieverlies kan niet negatief zijn");
                         return;
                     }
 
@@ -246,20 +252,20 @@ public class NewQuotationController {
             // select transformer type based on totalEnergyGenerated
 
             if(totalEnergyGenerated <= 2000){
-                transformerType = TransformerType.SB2000;
+                this.transformerType = TransformerType.SB2000;
             } 
             else if (totalEnergyGenerated <= 5000){
-                transformerType = TransformerType.SB5000;
+                this.transformerType = TransformerType.SB5000;
             } 
             else if (totalEnergyGenerated <= 6000){
-                transformerType = TransformerType.SB6000;
+                this.transformerType = TransformerType.SB6000;
             } 
             else if ( totalEnergyGenerated <= 8000){
-                transformerType = TransformerType.SB8000;
+                this.transformerType = TransformerType.SB8000;
             } else if (totalEnergyGenerated <= 12000){
-                transformerType = TransformerType.SB12000;
+                this.transformerType = TransformerType.SB12000;
             } else{
-                transformerType = TransformerType.None;
+                this.transformerType = TransformerType.None;
             }
             
             Label transformerLabel = new Label("Transformator: " + transformerType);
@@ -334,7 +340,13 @@ public class NewQuotationController {
                 this.date = datePicker.getValue();
             
                 
-            Quotation q = new Quotation(solarPanels, this.date, customerName, customerAddress, meterChangeNeeded);
+            Quotation q = new Quotation(
+                    solarPanels, 
+                    this.date, 
+                    customerName, 
+                    customerAddress, 
+                    meterChangeNeeded,
+                    transformerType);
 
             State.getInstance().addQuotation(q);
 
