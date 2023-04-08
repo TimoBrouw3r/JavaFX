@@ -37,7 +37,7 @@ public void login() {
         } else {
             err();
         }
-    }
+   }
 
 	private void ok() {
 		statusMessage.setText("Logged in!");

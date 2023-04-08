@@ -1,10 +1,13 @@
 package nl.saxion.re.views;
 
+import java.io.IOException;
 import java.time.LocalDate;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.DatePicker;
@@ -17,7 +20,9 @@ import javafx.scene.layout.Priority;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
+import javafx.stage.Stage;
 import javafx.util.converter.NumberStringConverter;
+import nl.saxion.re.App;
 import nl.saxion.re.types.Quotation;
 import nl.saxion.re.types.State;
 import nl.saxion.re.types.TransformerType;
@@ -58,6 +63,27 @@ public class NewQuotationController {
     @FXML
     void handleBack(){
 
+        Stage stage = (Stage) newQuotationPane.getScene().getWindow();
+    
+        int width = (int) stage.getWidth();
+        int height = (int) stage.getHeight();
+    
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("advisor.fxml"));
+    
+        Scene scene = null;
+    
+        try {
+            scene = new Scene(loader.load(), width, height);
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.exit(1);
+        }
+    
+        scene.getStylesheets().add(App.class.getResource("style.css").toExternalForm());
+    
+        stage.setScene(scene);
+    
+        stage.show();
     }
 
 
@@ -350,6 +376,8 @@ public class NewQuotationController {
 
             State.getInstance().addQuotation(q);
 
+            loadAllQuotationsPage();
+
             });
 
 
@@ -362,5 +390,30 @@ public class NewQuotationController {
 
     private void updatePanelLabel(Label label){
         label.setText("Maximaal aantal zonnepanelen: " + maxSolarPanels);
+    }
+
+    void loadAllQuotationsPage(){
+        Stage stage = (Stage) newQuotationPane.getScene().getWindow();
+    
+        int width = (int) stage.getWidth();
+        int height = (int) stage.getHeight();
+    
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("allQuotations.fxml"));
+    
+        Scene scene = null;
+    
+        try {
+            scene = new Scene(loader.load(), width, height);
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.exit(1);
+        }
+    
+        scene.getStylesheets().add(App.class.getResource("style.css").toExternalForm());
+    
+        stage.setScene(scene);
+    
+        stage.show();
+
     }
 } 

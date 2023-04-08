@@ -77,14 +77,12 @@ public final class State {
         getInstance().addTask(task23);
         getInstance().addTask(task24);
 
-
-        team1.addTask(task1);
-        team1.addTask(task5);
+        task1.setTeam(team1);
+        task6.setTeam(team1);
         
-        team2.addTask(task3);
-        team2.addTask(task4);
-        team2.addTask(task5);
-
+        task3.setTeam(team2);
+        task4.setTeam(team2);
+        task5.setTeam(team2);
         
         team1.addNameToTeam("monteur1");
         team2.addNameToTeam("monteur2");
@@ -173,9 +171,9 @@ public final class State {
 		}
 
 		switch (username) {
-			case "advisor":
+			case "adviseur":
 
-				if (password.equals("advisor")) {
+				if (password.equals("passw00")) {
 					State.getInstance().setUsername("Advisor");
 					State.getInstance().setUserType(UserTypes.ADVISOR);
 					return true;
@@ -185,17 +183,17 @@ public final class State {
 
 			case "planner":
 
-				if (password.equals("planner")) {
-					State.getInstance().setUsername("Planner");
+				if (password.equals("passw01")) {
+					State.getInstance().setUsername("passw01");
 					State.getInstance().setUserType(UserTypes.PLANNER);
 					return true;
 				} else {
 					return false;
 				}
 
-			case "inventory":
+			case "inkoper":
 
-				if (password.equals("inventory")) {
+				if (password.equals("passw02")) {
 					State.getInstance().setUsername("Inventory");
 					State.getInstance().setUserType(UserTypes.INVENTORY);
 					return true;

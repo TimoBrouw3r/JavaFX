@@ -1,9 +1,14 @@
 package nl.saxion.re.views;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+import nl.saxion.re.App;
 import nl.saxion.re.components.QuotationDescription;
 import nl.saxion.re.types.Quotation;
 import nl.saxion.re.types.State;
@@ -26,7 +31,30 @@ public class AllQuotationsController {
 
     @FXML
     public void handleBack() {
-        System.out.println("back");
+
+        Stage stage = (Stage) quotations.getScene().getWindow();
+    
+        int width = (int) stage.getWidth();
+        int height = (int) stage.getHeight();
+    
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("advisor.fxml"));
+    
+        Scene scene = null;
+    
+        try {
+            scene = new Scene(loader.load(), width, height);
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.exit(1);
+        }
+    
+        scene.getStylesheets().add(App.class.getResource("style.css").toExternalForm());
+    
+        stage.setScene(scene);
+    
+        stage.show();
+
+
     }
     
     public void update() {

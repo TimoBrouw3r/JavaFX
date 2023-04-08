@@ -73,8 +73,6 @@ public class Task {
     
 
     public void setTeam(Team team) {
-    
-
         this.team = team;
         team.addTask(this);
     }

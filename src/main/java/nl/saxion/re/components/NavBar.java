@@ -51,7 +51,7 @@ public class NavBar extends HBox{
     }
 
     public NavBar(){
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("navbar.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("NavBar.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
 
