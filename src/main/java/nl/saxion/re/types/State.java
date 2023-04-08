@@ -25,7 +25,66 @@ public final class State {
 		Team team2 = new Team("Team 2", "passw04");
 		Team team3 = new Team("Team 3", "passw05");
 		Team team4 = new Team("Team 4", "passw06");
-		// add some test tasks at random dates
+       
+        // add some random tasks
+
+        Task task1 = new Task(LocalDate.now(), "John Smith", "pretweg 1", 1_200_00, 20, false, TransformerType.SB5000);
+        Task task2 = new Task(LocalDate.now(), "Amy Pond", "pretweg 1", 1_200_00, 20, false, TransformerType.SB5000);
+        Task task3 = new Task(LocalDate.now().plusDays(2), "Rory Williams", "pretweg 1", 1_200_00, 20, false, TransformerType.SB5000);
+        Task task4 = new Task(LocalDate.now().plusDays(4), "River Song", "pretweg 1", 1_200_00, 20, false, TransformerType.SB5000);
+        Task task5 = new Task(LocalDate.now().plusDays(1), "Clara Oswald", "pretweg 1", 1_200_00, 20, false, TransformerType.SB5000);
+        Task task6 = new Task(LocalDate.now().plusDays(5), "Rose Tyler", "pretweg 1", 1_200_00, 20, false, TransformerType.SB5000);
+        Task task7 = new Task(LocalDate.now().plusDays(2), "Martha Jones", "pretweg 1", 1_200_00, 20, false, TransformerType.SB5000);
+        Task task8 = new Task(LocalDate.now().plusDays(7), "Donna Noble", "pretweg 1", 1_200_00, 20, false, TransformerType.SB5000);
+        Task task9 = new Task(LocalDate.now().plusDays(5), "Jack Harkness", "pretweg 1", 1_200_00, 20, false, TransformerType.SB5000);
+        Task task10 = new Task(LocalDate.now().plusDays(2), "Jeff Winger", "pretweg 1", 1_200_00, 20, false, TransformerType.SB5000);
+       Task task11 = new Task(LocalDate.now().plusDays(1), "Troy Barnes", "pretweg 1", 1_200_00, 20, false, TransformerType.SB5000); 
+       Task task12 = new Task(LocalDate.now().plusDays(8), "Britta Perry", "pretweg 1", 1_200_00, 20, false, TransformerType.SB5000);
+       Task task13 = new Task(LocalDate.now().plusDays(10), "Abed Nadir", "pretweg 1", 1_200_00, 20, false, TransformerType.SB5000);
+       Task task14 = new Task(LocalDate.now().plusDays(9), "Annie Edison", "pretweg 1", 1_200_00, 20, false, TransformerType.SB5000);
+       Task task15 = new Task(LocalDate.now().plusDays(3), "Shirley Bennett", "pretweg 1", 1_200_00, 20, false, TransformerType.SB5000);
+       Task task16 = new Task(LocalDate.now().plusDays(10), "Pierce Hawthorne", "pretweg 1", 1_200_00, 20, false, TransformerType.SB5000);
+       Task task17 = new Task(LocalDate.now().plusDays(6), "Craig Pelton", "pretweg 1", 1_200_00, 20, false, TransformerType.SB5000);
+       Task task18 = new Task(LocalDate.now().plusDays(7), "Chidi Anagonye", "pretweg 1", 1_200_00, 20, false, TransformerType.SB5000);
+       Task task19 = new Task(LocalDate.now().plusDays(5), "Eleanor Shellstrop", "pretweg 1", 1_200_00, 20, false, TransformerType.SB5000);
+       Task task20 = new Task(LocalDate.now().plusDays(8), "Jason Mendoza", "pretweg 1", 1_200_00, 20, false, TransformerType.SB5000);
+       Task task21 = new Task(LocalDate.now().plusDays(9), "Tahani Al-Jamil", "pretweg 1", 1_200_00, 20, false, TransformerType.SB5000);
+       Task task22 = new Task(LocalDate.now().plusDays(3), "Janet", "pretweg 1", 1_200_00, 20, false, TransformerType.SB5000);
+       Task task23 = new Task(LocalDate.now().plusDays(10), "Michael", "pretweg 1", 1_200_00, 20, false, TransformerType.SB5000);
+       Task task24 = new Task(LocalDate.now(), "Derek", "pretweg 1", 1_200_00, 20, false, TransformerType.SB5000);
+        getInstance().addTask(task1);
+        getInstance().addTask(task2);
+        getInstance().addTask(task3);
+        getInstance().addTask(task4);
+        getInstance().addTask(task5);
+        getInstance().addTask(task6);
+        getInstance().addTask(task7);
+        getInstance().addTask(task8);
+        getInstance().addTask(task9);
+        getInstance().addTask(task10);
+        getInstance().addTask(task11);
+        getInstance().addTask(task12);
+        getInstance().addTask(task13);
+        getInstance().addTask(task14);
+        getInstance().addTask(task15);
+        getInstance().addTask(task16);
+        getInstance().addTask(task17);
+        getInstance().addTask(task18);
+        getInstance().addTask(task19);
+        getInstance().addTask(task20);
+        getInstance().addTask(task21);
+        getInstance().addTask(task22);
+        getInstance().addTask(task23);
+        getInstance().addTask(task24);
+
+
+        team1.addTask(task1);
+        team1.addTask(task2);
+        
+        team2.addTask(task3);
+        team2.addTask(task4);
+        team2.addTask(task5);
+
         
         team1.addNameToTeam("monteur1");
         team2.addNameToTeam("monteur2");
@@ -35,24 +94,6 @@ public final class State {
 		instance.teams.add(team3);
 		instance.teams.add(team4);
 
-		instance.userTeam = team1;
-
-		Task teamTask = new Task(LocalDate.now(), "Test Name", "Test Lane 42");
-		teamTask.setTeam(team1);
-
-		Task teamTask2 = new Task(LocalDate.now().plusDays(1), "Test Name sdafhksdf", "Test Lane 42");
-		teamTask2.setTeam(team1);
-
-		instance.tasks.add(teamTask);
-		instance.tasks.add(teamTask2);
-		instance.tasks.add(new Task(LocalDate.now(), "Test Name 1", "Test Lane 42"));
-		instance.tasks.add(new Task(LocalDate.now(), "Test Name 2", "Test Lane 42"));
-		instance.tasks.add(new Task(LocalDate.now(), "Test Name 3", "Test Lane 42"));
-		instance.tasks.add(new Task(LocalDate.now().plusDays(5), "Test Name 4", "Test Lane 42"));
-		instance.tasks.add(new Task(LocalDate.now().plusDays(4), "Test Name 5", "Test Lane 42"));
-		instance.tasks.add(new Task(LocalDate.now().minusDays(3), "Test Name 6", "Test Lane 42"));
-		instance.tasks.add(new Task(LocalDate.now().minusDays(4), "Test Name 7", "Test Lane 42"));
-		instance.tasks.add(new Task(LocalDate.now().plusWeeks(2), "Test Name 8", "Test Lane 42"));
 	}
 
 	public static State getInstance() {

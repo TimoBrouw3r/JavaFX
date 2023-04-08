@@ -24,15 +24,6 @@ public class Task {
         this.transformerType = transformerType;
     }
 
-    public Task(LocalDate date, String clientName, String clientAddress) {
-        this.date = date;
-        this.clientName = clientName;
-        this.clientAddress = clientAddress;
-        this.transformerType = TransformerType.SB6000;
-        
-    }
-
-
     public Task(Quotation quotation) {
         this.date = quotation.getDate();
         this.clientName = quotation.getClientName();
