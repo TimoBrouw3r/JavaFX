@@ -79,7 +79,7 @@ public final class State {
 
 
         team1.addTask(task1);
-        team1.addTask(task2);
+        team1.addTask(task5);
         
         team2.addTask(task3);
         team2.addTask(task4);

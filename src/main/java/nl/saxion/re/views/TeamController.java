@@ -17,112 +17,102 @@ import nl.saxion.re.types.Task;
  */
 public class TeamController {
 
-    @FXML
-    Label taskgreet; 
+	@FXML
+	Label taskgreet;
 
-   @FXML 
-   Label clientName;
+	@FXML
+	Label clientName;
 
-   @FXML
-   Label clientAddress;
+	@FXML
+	Label clientAddress;
 
-   @FXML
-   VBox upList;
-    
+	@FXML
+	VBox upList;
 
+	@FXML
+	VBox materials;
 
-    @FXML
-    VBox materials;  
+	Task mainTask;
 
-   Task mainTask; 
+	public void initialize() {
 
-	public void initialize(){
-    
-        mainTask = State.getInstance().getTeam().getTaskOnDay(LocalDate.now());
+		mainTask = State.getInstance().getTeam().getTaskOnDay(LocalDate.now());
 
+		taskgreet.setText("Hallo, " + State.getInstance().getUsername() + "! \n Vandaag ga je naar:");
 
-        taskgreet.setText("Hallo, " + State.getInstance().getUsername() + "! \n Vandaag ga je naar:");
+		if (mainTask != null) {
 
-       
-        if(mainTask == null){
-            clientName.setText("Geen opdracht vandaag"); 
-            return;
-        } 
-        
-        clientName.setText(mainTask.getClientName());
-        clientAddress.setText(mainTask.getClientAddress());
+			clientName.setText(mainTask.getClientName());
+			clientAddress.setText(mainTask.getClientAddress());
 
-        
-        ArrayList<Task> tasksInFuture = State.getInstance().getTeam().getTasksInFuture();
+			Label solar = new Label("Solar panel");
+			Label solarAmount = new Label(mainTask.getAmountOfSolarPanels() + "x");
 
-        System.out.println(tasksInFuture.size());
+			solar.setPrefWidth(350);
+			solarAmount.setPrefWidth(350);
 
-        for(Task task : tasksInFuture){
-            UpcomingTask upTask = new UpcomingTask(task);
-            upList.getChildren().add(upTask);
-        }
-    
+			solar.setAlignment(Pos.CENTER);
+			solarAmount.setAlignment(Pos.CENTER);
 
-        Label solar = new Label("Solar panel");
-        Label solarAmount = new Label(mainTask.getAmountOfSolarPanels() + "x");
+			HBox solarBox = new HBox();
 
-        solar.setPrefWidth(350);
-        solarAmount.setPrefWidth(350);
+			solarBox.setAlignment(Pos.CENTER);
+			solarBox.setPrefWidth(930);
+			solarBox.setPrefHeight(75);
+			solarBox.setSpacing(50);
+			solarBox.setStyle("-fx-background-color: #bbbbbb;");
 
-        solar.setAlignment(Pos.CENTER);
-        solarAmount.setAlignment(Pos.CENTER);
+			solarBox.getChildren().add(solar);
+			solarBox.getChildren().add(solarAmount);
 
+			materials.getChildren().add(solarBox);
 
+			HBox transformerBox = new HBox();
 
-        HBox solarBox = new HBox();
+			transformerBox.setAlignment(Pos.CENTER);
+			transformerBox.setPrefWidth(930);
+			transformerBox.setPrefHeight(75);
+			transformerBox.setSpacing(50);
+			transformerBox.setStyle("-fx-background-color: #aaaaaa;");
 
-        solarBox.setAlignment(Pos.CENTER);
-        solarBox.setPrefWidth(930);
-        solarBox.setPrefHeight(75);
-        solarBox.setSpacing(50);
-        solarBox.setStyle("-fx-background-color: #bbbbbb;");
+			Label transformer = new Label(mainTask.getTransformerType());
 
-        solarBox.getChildren().add(solar);
-        solarBox.getChildren().add(solarAmount);
-    
-        materials.getChildren().add(solarBox);
+			transformer.setPrefWidth(700);
+			transformer.setAlignment(Pos.CENTER);
 
-        HBox transformerBox = new HBox();
+			transformerBox.getChildren().add(transformer);
+			materials.getChildren().add(transformerBox);
 
-        transformerBox.setAlignment(Pos.CENTER);
-        transformerBox.setPrefWidth(930);
-        transformerBox.setPrefHeight(75);
-        transformerBox.setSpacing(50);
-        transformerBox.setStyle("-fx-background-color: #aaaaaa;");
+			if (mainTask.meterChangeNeeded()) {
+				HBox meterBox = new HBox();
 
+				meterBox.setAlignment(Pos.CENTER);
+				meterBox.setPrefWidth(930);
+				meterBox.setPrefHeight(75);
+				meterBox.setSpacing(50);
+				meterBox.setStyle("-fx-background-color: #bbbbbb;");
 
-        Label transformer = new Label(mainTask.getTransformerType());
-        
-        transformer.setPrefWidth(700);
-        transformer.setAlignment(Pos.CENTER);
+				Label meter = new Label("Meterkast aanpassen nodig");
 
+				meter.setPrefWidth(700);
+				meter.setAlignment(Pos.CENTER);
 
-        transformerBox.getChildren().add(transformer);
-        materials.getChildren().add(transformerBox);
+				meterBox.getChildren().add(meter);
 
-        if(mainTask.meterChangeNeeded()){
-            HBox meterBox = new HBox();
+				materials.getChildren().add(meterBox);
+			}
+		} else {
+			clientName.setText("Geen opdracht vandaag");
+		}
 
-            meterBox.setAlignment(Pos.CENTER);
-            meterBox.setPrefWidth(930);
-            meterBox.setPrefHeight(75);
-            meterBox.setSpacing(50);
-            meterBox.setStyle("-fx-background-color: #bbbbbb;");
+		ArrayList<Task> tasksInFuture = State.getInstance().getTeam().getTasksInFuture();
 
-            Label meter = new Label("Meterkast aanpassen nodig");
+		System.out.println(tasksInFuture.size());
 
-            meter.setPrefWidth(700);
-            meter.setAlignment(Pos.CENTER);
-            
-            meterBox.getChildren().add(meter);
+		for (Task task : tasksInFuture) {
+			UpcomingTask upTask = new UpcomingTask(task);
+			upList.getChildren().add(upTask);
+		}
 
-            materials.getChildren().add(meterBox);
-        }
-
-    }   
+	}
 }
